@@ -17,13 +17,14 @@
       modules = [
         ./system/configuration.nix
 
-	# Make home-manager a module of NixOS so that the home-manager configuration will be deployed automatically with nixos-rebuild switch
-	home-manager.nixosModules.home-manager {
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
+		# Make home-manager a module of NixOS so that the home-manager configuration will be deployed automatically with nixos-rebuild switch
+		home-manager.nixosModules.home-manager {
+		  home-manager.useGlobalPkgs = true;
+		  home-manager.useUserPackages = true;
+		  home-manager.backupFileExtension = "hm-backup";
 
-	  home-manager.users.luke = import ./home.nix;
-	}
+		  home-manager.users.luke = import ./home;
+		}
       ];
     };
   };

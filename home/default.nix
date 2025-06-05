@@ -1,0 +1,86 @@
+{ config, pkgs, ... }:
+
+{
+  imports = [ 
+  	./fonts.nix
+  ];
+
+  home.username = "luke";
+  home.homeDirectory = "/home/luke";
+
+  home.packages = with pkgs; [
+    neofetch
+    lazygit
+
+    # Archives
+    zip
+    xz
+    unzip
+    p7zip
+
+    # Utils
+    ripgrep
+
+    # Misc
+    cowsay
+    which
+    tree
+    gnupg
+	rofi-wayland
+
+	firefox
+
+    # Syscall monitoring
+    strace # system call tracing
+    ltrace # library call tracing
+    lsof # list open files
+  ];
+
+  # Configure Git
+  programs.git = {
+    enable = true;
+    userName = "Luke Chu";
+    userEmail = "37006668+lukechu10@users.noreply.github.com";
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+      url = {
+        "https://github.com/" = {
+		  insteadOf = [ "gh:" "github:" ];
+		};
+      };
+    };
+  };
+
+  # Configure Neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    extraPackages = with pkgs; [
+      tree-sitter
+      wl-clipboard
+      ripgrep
+      fzf
+
+      nodejs
+    ];
+  };
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nvim";
+
+  programs.waybar.enable = true;
+
+  # Configure Hyprland
+  home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/hypr";
+
+  # Configure Waybar
+  home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/waybar";
+
+  # Configure Rofi
+  home.file.".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/rofi";
+
+  # Configure Kitty
+  home.file.".config/kitty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/kitty";
+
+  home.stateVersion = "25.05";
+}

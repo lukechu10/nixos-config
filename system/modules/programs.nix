@@ -2,9 +2,7 @@
 
 {
   programs = {
-    hyprland = {
-      enable = true;
-    };
+	hyprland.enable = true;
     fish.enable = true;
   };
 }
