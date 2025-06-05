@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     neofetch
     lazygit
+	starship
 
     # Archives
     zip
@@ -53,6 +54,11 @@
     };
   };
 
+  # Configure Github CLI
+  programs.gh = {
+	enable = true;
+  };
+
   # Configure Neovim
   programs.neovim = {
     enable = true;
@@ -81,6 +87,9 @@
 
   # Configure Kitty
   home.file.".config/kitty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/kitty";
+
+  # Configure Starship
+  home.file.".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/starship.toml";
 
   home.stateVersion = "25.05";
 }
