@@ -10,8 +10,26 @@
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub.device = "nodev";
+  # Do not use OS Prober as it takes too long.
+  # boot.loader.grub.useOSProber = true;
+  boot.loader.grub.extraEntries = ''
+menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-BAEA-C954' {
+	insmod part_gpt
+	insmod fat
+	search --no-floppy --fs-uuid --set=root BAEA-C954
+	chainloader /efi/Microsoft/Boot/bootmgfw.efi
+}
+menuentry 'Arch Linux (on /dev/nvme1n1p4)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d' {
+	insmod part_gpt
+	insmod fat
+	search --no-floppy --fs-uuid --set=root DF04-0904
+	linux //kernels/2l23lk60khahkx3k6i8hhlblhx5gmw8a-linux-6.12.31-bzImage init=/nix/store/bmrz4i8rj7qhclbl0np8q7nsxf2zdz7x-nixos-system-luke-desktop-25.05.20250604.8f1b52b/init loglevel=4 lsm=landlock,yama,bpf
+	initrd //kernels/1bj0kl7pc14kgifhd37x1xdqaak43lf6-initrd-linux-6.12.31-initrd
+}
+  '';
+  boot.loader.grub.efiSupport = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "luke-desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
