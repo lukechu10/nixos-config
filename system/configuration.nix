@@ -7,6 +7,9 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  # Disable man cache
+  documentation.man.generateCaches = false;
 
   # Bootloader.
   boot.loader.grub.enable = true;

@@ -38,6 +38,11 @@
     lsof # list open files
   ];
 
+  programs.nix-index = {
+  	enable = true;
+	enableFishIntegration = true;
+  };
+
   # Configure Git
   programs.git = {
     enable = true;
@@ -55,7 +60,7 @@
     };
   };
 
-  # Configure Github CLI
+  # Configure GitHub CLI
   programs.gh = {
 	enable = true;
   };
@@ -71,6 +76,9 @@
       fzf
 
       nodejs
+
+	  # LSPs
+	  harper
     ];
   };
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nvim";
@@ -91,6 +99,9 @@
 
   # Configure Starship
   home.file.".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/starship.toml";
+
+  # Configure Cursor
+  home.file.".local/share/icons".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/cursors";
 
   home.stateVersion = "25.05";
 }
