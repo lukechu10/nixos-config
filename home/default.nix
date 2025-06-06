@@ -12,7 +12,7 @@
   home.packages = with pkgs; [
     neofetch
     lazygit
-	starship
+    starship
 
     # Archives
     zip
