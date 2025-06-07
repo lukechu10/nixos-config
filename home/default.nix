@@ -28,9 +28,5 @@
   home.file.".config/rofi".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/rofi";
 
-  # Configure Starship
-  home.file.".config/starship.toml".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/starship.toml";
-
   home.stateVersion = "25.05";
 }

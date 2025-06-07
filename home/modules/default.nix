@@ -10,6 +10,7 @@
     ./git.nix
     ./kitty.nix
     ./nvim.nix
+    ./starship.nix
 
     ./packages.nix
     ./utils.nix

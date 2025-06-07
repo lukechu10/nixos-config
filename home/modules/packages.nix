@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     neofetch
     lazygit
-    starship
 
     nixfmt-rfc-style
 
