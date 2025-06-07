@@ -12,9 +12,13 @@
 		};
 		initLua = ''
 			require('starship'):setup()
+			require('full-border'):setup {
+				type = ui.Border.ROUNDED
+			}
 		'';
 		plugins = with pkgs; {
 			starship = yaziPlugins.starship;
+			full-border = yaziPlugins.full-border;
 		};
 	};
 
@@ -23,7 +27,13 @@
 		recursive = true;
 	};
 	home.file.".config/yazi/theme.toml".text = ''
-	[flavor]
-	dark = "catppuccin-mocha"
+		[flavor]
+		dark = "catppuccin-mocha"
+	'';
+	home.file.".config/yazi/keymap.toml".text = ''
+		[manager]
+		prepend_keymap = [
+			{ on = "t", run = "shell --orphan --confirm kitty", desc = "Open terminal at current dir" },
+		]
 	'';
 }
