@@ -13,6 +13,7 @@
     neofetch
     lazygit
     starship
+	yazi
 
     # Archives
     zip
