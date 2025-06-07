@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  # Configure Hyprland
+  # Symlink the Hyprland configuration files.
   home.file.".config/hypr".source = config.lib.meta.mkMutableSymlink ./config;
-  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/home/modules/hypr/config";
+
+  # Copy the mouse cursor themes.
+  home.file.".local/share/icons".source = ./cursors;
 }
