@@ -8,6 +8,7 @@
     ./fish.nix
     ./fonts.nix
     ./git.nix
+    ./kitty.nix
     ./nvim.nix
 
     ./packages.nix

@@ -12,9 +12,6 @@
     vim
     neovim
 
-    # Terminal
-    kitty
-
     # Hyprland
     # Note that hyprland itself is configured in programs.nix
     hyprpaper
