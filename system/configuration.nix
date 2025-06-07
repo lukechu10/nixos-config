@@ -113,6 +113,12 @@ menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Sudo configuration.
+  security.sudo.extraConfig = ''
+	Defaults timestamp_type=global
+	Defaults timestamp_timeout=10
+  '';
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
