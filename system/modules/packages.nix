@@ -2,32 +2,33 @@
 
 {
   environment.systemPackages = with pkgs; [
-	# Misc
+    # Misc
     which
     git
-	gh # GitHub CLI
+    gh # GitHub CLI
     wget
 
-	# Editor
+    # Editor
     vim
     neovim
 
-	# Terminal
+    # Terminal
     kitty
 
-	# Hyprland
-	# Note that hyprland itself is configured in programs.nix
-	hyprpaper
-	hyprcursor
-	hypridle
-	hyprsunset
+    # Hyprland
+    # Note that hyprland itself is configured in programs.nix
+    hyprpaper
+    hyprcursor
+    hypridle
+    hyprsunset
+    hyprlock
 
     # Build tools
     gcc
     clang
     gnumake
 
-	# Rust
-	rustup
+    # Rust
+    rustup
   ];
 }
