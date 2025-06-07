@@ -96,6 +96,20 @@ menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os 
     variant = "";
   };
 
+  # Configure power button
+  services.logind.powerKey = "suspend";
+
+  # Configure login manager
+  environment.systemPackages = with pkgs; [ greetd.tuigreet ];
+  services.greetd = {
+  	enable = true;
+	settings = rec {
+	  default_session = {
+		command = "tuigreet --cmd hyprland";
+	  };
+	};
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

@@ -19,6 +19,8 @@
 	# Note that hyprland itself is configured in programs.nix
 	hyprpaper
 	hyprcursor
+	hypridle
+	hyprsunset
 
     # Build tools
     gcc
