@@ -21,7 +21,6 @@
     which
     tree
     gnupg
-    rofi-wayland
 
     firefox
 

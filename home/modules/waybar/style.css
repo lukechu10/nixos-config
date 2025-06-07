@@ -1,0 +1,74 @@
+@define-color bg-color #1b1721;
+
+* {
+	border: none;
+	font-family: "FiraCode Nerd Font";
+	font-size: 13px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	margin-top: 3px;
+}
+
+.modules-left,
+.modules-right {
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#clock {
+	border-radius: 8px;
+	background: @bg-color;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#clock {
+	margin-right: 10px;
+	padding: 0 10px;
+}
+
+#clock {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#window {
+	padding: 0 15px;
+	border-radius: 8px;
+	background: @bg-color;
+}
+
+#workspaces {
+	background: @bg-color;
+	border-radius: 8px;
+}
+
+#workspaces button {
+	padding: 0 5px;
+	background: transparent;
+	border-radius: 8px;
+	color: white;
+}
+
+#workspaces button.empty {
+	color: #aaa;
+}
+
+#workspaces button.active {
+	background: #64727D;
+}
+
+#workspaces button.urgent {
+	background-color: red;
+}

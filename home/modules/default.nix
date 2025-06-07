@@ -3,6 +3,8 @@
 {
   imports = [
     ./hypr
+    ./rofi
+    ./waybar
     ./yazi
 
     ./fish.nix

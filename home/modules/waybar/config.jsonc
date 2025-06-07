@@ -1,0 +1,53 @@
+{
+	"layer": "top",
+	"modules-left": [
+		"clock",
+		"battery",
+		"pulseaudio",
+		"memory",
+		"cpu"
+	],
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+	"modules-right": [
+		"hyprland/window"
+	],
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"persistent-workspaces": {
+			"*": 5
+		},
+		"show-special": true
+	},
+	"hyprland/window": {
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "🌎 $1",
+			"(.*) — Firefox Developer Edition": "🌎 $1"
+		}
+	},
+	"clock": {
+		"format": "{:%a, %d %b %I:%M%p}"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": " 0%",
+		"format-icons": {
+			"headphone": "",
+			"phone": "",
+			"phone-muted": "",
+			"portable": "",
+			"default": [
+				"",
+				""
+			]
+		}
+	},
+	"memory": {
+		"format": " {percentage}%"
+	},
+	"cpu": {
+		"interval": 1,
+		"format": "  {usage}%"
+	}
+}

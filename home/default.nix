@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
+{ ... }:
 {
   imports = [
     ./modules
@@ -17,16 +11,6 @@
     enable = true;
     enableFishIntegration = true;
   };
-
-  programs.waybar.enable = true;
-
-  # Configure Waybar
-  home.file.".config/waybar".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/waybar";
-
-  # Configure Rofi
-  home.file.".config/rofi".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/rofi";
 
   home.stateVersion = "25.05";
 }
