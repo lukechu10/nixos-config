@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -14,10 +19,6 @@
   };
 
   programs.waybar.enable = true;
-
-  # Configure Hyprland
-  home.file.".config/hypr".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/hypr";
 
   # Configure Waybar
   home.file.".config/waybar".source =
