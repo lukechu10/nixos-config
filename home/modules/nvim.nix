@@ -13,11 +13,12 @@
 
       nodejs
 
-	  # LSPs
-	  harper
-	  nil
+      # LSPs
+      lua-language-server
+      harper
+      nil
     ];
   };
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nvim";
-
+  home.file.".config/nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nvim";
 }

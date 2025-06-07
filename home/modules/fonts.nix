@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-	corefonts
-	vista-fonts
+    corefonts
+    vista-fonts
 
- 	nerd-fonts.fira-code 	
-	font-awesome
+    nerd-fonts.fira-code
+    font-awesome
   ];
 }

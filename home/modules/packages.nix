@@ -6,6 +6,8 @@
     lazygit
     starship
 
+    nixfmt-rfc-style
+
     # Archives
     zip
     xz
@@ -20,9 +22,9 @@
     which
     tree
     gnupg
-	rofi-wayland
+    rofi-wayland
 
-	firefox
+    firefox
 
     # Syscall monitoring
     strace # system call tracing
