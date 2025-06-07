@@ -30,6 +30,9 @@
     strace # system call tracing
     ltrace # library call tracing
     lsof # list open files
+
+    # Misc
+    inotify-tools # file system event monitoring
   ];
 
 }

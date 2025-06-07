@@ -14,8 +14,8 @@
       nodejs
 
       # LSPs
-      lua-language-server
       harper
+      lua-language-server
       nil
     ];
   };
