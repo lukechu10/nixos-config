@@ -9,4 +9,6 @@
     nerd-fonts.fira-code
     font-awesome
   ];
+
+  fonts.fontconfig.enable = true;
 }
