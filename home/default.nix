@@ -7,6 +7,7 @@
     ./waybar
     ./yazi
 
+    ./firefox.nix
     ./fish.nix
     ./fonts.nix
     ./git.nix

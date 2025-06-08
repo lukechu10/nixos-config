@@ -22,8 +22,6 @@
     tree
     gnupg
 
-    firefox
-
     # Syscall monitoring
     strace # system call tracing
     ltrace # library call tracing
