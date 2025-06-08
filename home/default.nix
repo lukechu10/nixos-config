@@ -14,6 +14,7 @@
     ./kitty.nix
     ./nvim.nix
     ./starship.nix
+    ./ui.nix
 
     ./packages.nix
     ./utils.nix

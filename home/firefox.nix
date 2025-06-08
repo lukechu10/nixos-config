@@ -7,7 +7,6 @@
     profiles.default = {
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
-        .tab-close-button.close-icon {display:none !important;}
       '';
       userContent = ''
         @import "firefox-gnome-theme/userContent.css";
