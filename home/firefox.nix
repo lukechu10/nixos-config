@@ -7,6 +7,9 @@
     profiles.default = {
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
+        .titlebar-buttonbox-container > .titlebar-buttonbox {
+          display: none !important;
+        }
       '';
       userContent = ''
         @import "firefox-gnome-theme/userContent.css";
