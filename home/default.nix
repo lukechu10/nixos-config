@@ -10,6 +10,7 @@
     ./firefox.nix
     ./fish.nix
     ./fonts.nix
+    ./gaming.nix
     ./git.nix
     ./kitty.nix
     ./nixpkgs.nix
