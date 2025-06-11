@@ -7,13 +7,14 @@
     git
     gh # GitHub CLI
     wget
+    btop-cuda # System monitor
 
     # Editor
     vim
     neovim
 
     # Hyprland
-    # Note that hyprland itself is configured in programs.nix
+    # Note that Hyprland itself is configured in programs.nix
     hyprpaper
     hyprcursor
     hypridle
