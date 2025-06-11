@@ -12,6 +12,7 @@
     ./fonts.nix
     ./git.nix
     ./kitty.nix
+    ./nixpkgs.nix
     ./nvim.nix
     ./starship.nix
     ./ui.nix
