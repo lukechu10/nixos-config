@@ -6,6 +6,10 @@
     interactiveShellInit = ''
       set fish_greeting
       eval (starship init fish)
+
+      # Add Cargo's bin directory to the PATH
+      # This allows us to use tools installed via `cargo install`.
+      fish_add_path ~/.cargo/bin
     '';
   };
 }
