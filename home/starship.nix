@@ -38,6 +38,12 @@
         mantle = "#181825";
         crust = "#11111b";
       };
+
+      nix_shell = {
+        unknown_msg = "unknown";
+        # Support new `nix shell` command.
+        heuristic = true;
+      };
     };
   };
 }
