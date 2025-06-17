@@ -32,10 +32,10 @@
         insmod part_gpt
         insmod fat
         search --no-floppy --fs-uuid --set=root DF04-0904
-        echo'Loading Linux linux ...'
-        linux/vmlinuz-linux root=UUID=7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d rw  loglevel=3 quiet
-        echo'Loading initial ramdisk ...'
-        initrd/intel-ucode.img /initramfs-linux.img
+        echo 'Loading Linux linux ...'
+        linux /vmlinuz-linux root=UUID=7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d rw  loglevel=3 quiet
+        echo 'Loading initial ramdisk ...'
+        initrd /intel-ucode.img /initramfs-linux.img
     }
     submenu 'Advanced options for Arch Linux' $menuentry_id_option 'gnulinux-advanced-7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d' {
     menuentry 'Arch Linux, with Linux linux' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-linux-advanced-7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d' {
@@ -44,10 +44,10 @@
         insmod part_gpt
         insmod fat
         search --no-floppy --fs-uuid --set=root DF04-0904
-        echo'Loading Linux linux ...'
-        linux/vmlinuz-linux root=UUID=7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d rw  loglevel=3 quiet
-        echo'Loading initial ramdisk ...'
-        initrd/intel-ucode.img /initramfs-linux.img
+        echo 'Loading Linux linux ...'
+        linux /vmlinuz-linux root=UUID=7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d rw  loglevel=3 quiet
+        echo 'Loading initial ramdisk ...'
+        initrd /intel-ucode.img /initramfs-linux.img
     }
     menuentry 'Arch Linux, with Linux linux (fallback initramfs)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-linux-fallback-7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d' {
       set gfxpayload=keep
@@ -55,10 +55,10 @@
         insmod part_gpt
         insmod fat
         search --no-floppy --fs-uuid --set=root DF04-0904
-        echo'Loading Linux linux ...'
-        linux/vmlinuz-linux root=UUID=7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d rw  loglevel=3 quiet
-        echo'Loading initial ramdisk ...'
-        initrd/intel-ucode.img /initramfs-linux-fallback.img
+        echo 'Loading Linux linux ...'
+        linux /vmlinuz-linux root=UUID=7c78b3e4-0ccc-4d7d-87b6-5baac728ad5d rw  loglevel=3 quiet
+        echo 'Loading initial ramdisk ...'
+        initrd /intel-ucode.img /initramfs-linux-fallback.img
       }
     }
     menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-BAEA-C954' {
