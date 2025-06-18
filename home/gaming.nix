@@ -6,5 +6,6 @@
     winetricks
 
     gamescope
+    mangohud
   ];
 }
