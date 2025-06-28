@@ -11,12 +11,13 @@
       ripgrep
       fzf
 
-      nodejs
+      websocat
 
       # LSPs
       harper
       lua-language-server
       nil
+      tinymist
     ];
   };
   home.file.".config/nvim".source =

@@ -26,7 +26,8 @@
     clang
     gnumake
 
-    # Rust
+    nodejs
     rustup
+    typst
   ];
 }
