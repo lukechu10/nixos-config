@@ -58,15 +58,24 @@ window#waybar {
 	padding: 0 5px;
 	background: transparent;
 	border-radius: 8px;
-	color: white;
-}
-
-#workspaces button.empty {
 	color: #aaa;
 }
 
-#workspaces button.active {
-	background: #64727D;
+#workspaces button:not(.empty) {
+	color: white;
+}
+
+#workspaces button:not(.empty):not(.hosting-monitor) {
+	color: lightblue;
+}
+#workspaces button.visible:not(.hosting-monitor) {
+	background: lightskyblue;
+	color: black;
+}
+
+#workspaces button.visible.hosting-monitor {
+	background: lightcyan;
+	color: black;
 }
 
 #workspaces button.urgent {

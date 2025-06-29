@@ -16,9 +16,11 @@
 	"hyprland/workspaces": {
 		"format": "{icon}",
 		"persistent-workspaces": {
-			"*": 5
+			"eDP-1": 5,
+			"*": 1
 		},
-		"show-special": true
+		"show-special": true,
+		"all-outputs": true
 	},
 	"hyprland/window": {
 		"rewrite": {
