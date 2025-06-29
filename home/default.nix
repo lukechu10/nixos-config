@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   imports = [
@@ -28,6 +28,12 @@
   programs.nix-index = {
     enable = true;
     enableFishIntegration = true;
+  };
+
+  programs.nh = {
+    enable = true;
+    clean.extraArgs = "--keep-since 7d";
+    flake = config.lib.meta.configPath;
   };
 
   home.stateVersion = "25.05";
