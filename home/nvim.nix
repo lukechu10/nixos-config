@@ -17,7 +17,10 @@
       harper
       lua-language-server
       nil
+      tailwindcss-language-server
+      taplo
       tinymist
+      vscode-langservers-extracted
     ];
   };
   home.file.".config/nvim".source =
