@@ -14,13 +14,18 @@
       websocat
 
       # LSPs
+      basedpyright
+      clang-tools
       harper
       lua-language-server
       nil
       tailwindcss-language-server
       taplo
       tinymist
+      typescript-language-server
       vscode-langservers-extracted
+
+      vscode-extensions.vadimcn.vscode-lldb
     ];
   };
   home.file.".config/nvim".source =
