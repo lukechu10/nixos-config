@@ -8,4 +8,6 @@
     ./programs.nix
     ./users.nix
   ];
+
+  nixpkgs.overlays = [ (import ./overlays.nix) ];
 }
