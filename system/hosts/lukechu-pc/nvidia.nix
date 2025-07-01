@@ -18,9 +18,4 @@
     offload.enable = true;
     offload.enableOffloadCmd = true;
   };
-
-  boot.kernelParams = [
-    "nvidia_drm.fbdev=1"
-    "nvidia_drm.modeset=1"
-  ];
 }
