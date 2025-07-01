@@ -20,7 +20,7 @@
   };
 
   boot.kernelParams = [
-    "nvidia-drm.fbdev=1"
-    "nvidia-drm.modeset=1"
+    "nvidia_drm.fbdev=1"
+    "nvidia_drm.modeset=1"
   ];
 }
