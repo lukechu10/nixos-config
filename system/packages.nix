@@ -9,6 +9,9 @@
     wget
     btop-cuda # System monitor
 
+    # NVIDIA hardware acceleration
+    nvidia-vaapi-driver
+
     # Editor
     vim
     neovim
