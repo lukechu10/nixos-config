@@ -132,5 +132,13 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # Printing support
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   system.stateVersion = "25.05";
 }
