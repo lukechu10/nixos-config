@@ -23,6 +23,8 @@
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
+  boot.loader.grub.splashImage = null;
+  boot.loader.grub.fontSize = 30;
   # Do not use OS Prober as it takes too long.
   # boot.loader.grub.useOSProber = true;
   boot.loader.grub.extraEntries = ''
