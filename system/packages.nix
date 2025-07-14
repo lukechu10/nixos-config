@@ -9,9 +9,6 @@
     wget
     btop-cuda # System monitor
 
-    # NVIDIA hardware acceleration
-    nvidia-vaapi-driver
-
     # Editor
     vim
     neovim
@@ -32,5 +29,7 @@
     nodejs
     rustup
     typst
+
+    dotnet-sdk_9
   ];
 }
