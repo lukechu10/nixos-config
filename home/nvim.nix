@@ -19,6 +19,7 @@
       harper
       lua-language-server
       nil
+      omnisharp-roslyn
       tailwindcss-language-server
       taplo
       tinymist
