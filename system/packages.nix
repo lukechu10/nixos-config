@@ -31,5 +31,7 @@
     typst
 
     dotnet-sdk_9
+
+    devenv
   ];
 }
