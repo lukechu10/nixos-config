@@ -33,5 +33,6 @@
     dotnet-sdk_9
 
     devenv
+    direnv
   ];
 }
