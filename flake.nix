@@ -22,11 +22,16 @@
       home-manager,
       ...
     }@attrs:
+    let
+      system = "x86_64-linux";
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    in
     {
       nixosConfigurations.lukechu-pc = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {
           inherit attrs;
+          inherit pkgs-unstable;
         };
         modules = [
           ./system/hosts/lukechu-pc/configuration.nix

@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -15,11 +20,11 @@
 
     # Hyprland
     # Note that Hyprland itself is configured in programs.nix
-    hyprpaper
-    hyprcursor
-    hypridle
-    hyprsunset
-    hyprlock
+    pkgs-unstable.hyprpaper
+    pkgs-unstable.hyprcursor
+    pkgs-unstable.hypridle
+    pkgs-unstable.hyprsunset
+    pkgs-unstable.hyprlock
 
     # Build tools
     gcc
@@ -31,6 +36,8 @@
     typst
 
     dotnet-sdk_9
+    dotnet-runtime_9
+    dotnet-ef
 
     devenv
     direnv
