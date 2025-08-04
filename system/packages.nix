@@ -34,5 +34,7 @@
 
     devenv
     direnv
+
+    config.boot.kernelPackages.perf
   ];
 }
