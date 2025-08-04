@@ -7,6 +7,9 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      # SANE scanner group
+      "scanner"
+      "lp"
     ];
     packages = with pkgs; [ ];
     shell = pkgs.fish;

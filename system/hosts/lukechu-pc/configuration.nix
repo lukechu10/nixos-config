@@ -142,5 +142,8 @@
     openFirewall = true;
   };
 
+  # Scanning support
+  hardware.sane.enable = true;
+
   system.stateVersion = "25.05";
 }
