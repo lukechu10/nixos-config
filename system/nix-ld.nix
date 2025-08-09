@@ -14,6 +14,8 @@
       pkgs.xorg.libXinerama
       pkgs.libpng
       pkgs.freetype
+
+      pkgs.icu
     ] ++ pkgs.steam-run.args.multiPkgs pkgs;
   };
 }
