@@ -8,6 +8,7 @@
     gh # GitHub CLI
     wget
     btop-cuda # System monitor
+    wasmtime # WebAssembly runtime
 
     # Editor
     vim
