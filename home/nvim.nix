@@ -16,6 +16,7 @@
       # LSPs
       basedpyright
       clang-tools
+      fsautocomplete
       harper
       lua-language-server
       nil

@@ -32,6 +32,7 @@
     typst
 
     dotnet-sdk_9
+    fantomas # F# source code formatter
 
     devenv
     direnv
