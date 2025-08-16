@@ -28,6 +28,9 @@
     strace # system call tracing
     ltrace # library call tracing
     lsof # list open files
+
+    # Notifications
+    swaynotificationcenter # (Auto start by Hyprland)
   ];
 
 }

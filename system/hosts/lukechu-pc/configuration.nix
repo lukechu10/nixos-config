@@ -145,5 +145,8 @@
   # Scanning support
   hardware.sane.enable = true;
 
+  # USB Automounting
+  services.udisks2.enable = true;
+
   system.stateVersion = "25.05";
 }
