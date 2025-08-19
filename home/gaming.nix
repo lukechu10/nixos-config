@@ -8,10 +8,6 @@
     gamescope
     mangohud
 
-    (prismlauncher.override {
-      jdks = [
-        zulu
-      ];
-    })
+    prismlauncher
   ];
 }

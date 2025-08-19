@@ -8,5 +8,16 @@
     ];
     dhcpcd.extraConfig = "nohook resolv.conf";
     networkmanager.dns = "none";
+
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        80
+        443
+        # Minecraft server port
+        25565
+      ];
+    };
+
   };
 }
