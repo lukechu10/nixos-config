@@ -31,6 +31,9 @@
 
     # Notifications
     swaynotificationcenter # (Auto start by Hyprland)
-  ];
 
+    # Funsies
+    cmatrix
+    asciiquarium
+  ];
 }
