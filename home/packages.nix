@@ -15,6 +15,7 @@
 
     # Utils
     ripgrep
+    fd
 
     # Misc
     cowsay
