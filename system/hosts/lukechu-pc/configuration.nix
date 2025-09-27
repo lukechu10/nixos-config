@@ -114,7 +114,7 @@
   environment.systemPackages = with pkgs; [ greetd.tuigreet ];
   services.greetd = {
     enable = true;
-    settings = rec {
+    settings = {
       default_session = {
         command = "tuigreet --cmd hyprland";
       };
