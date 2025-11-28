@@ -7,6 +7,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "gamemode"
       # SANE scanner group
       "scanner"
       "lp"
