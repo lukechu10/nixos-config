@@ -32,6 +32,7 @@
 
     # Notifications
     swaynotificationcenter # (Auto start by Hyprland)
+    libnotify
 
     # Funsies
     cmatrix
