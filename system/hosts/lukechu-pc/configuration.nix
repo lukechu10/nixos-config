@@ -116,7 +116,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet} --time --cmd hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
       };
     };
     useTextGreeter = true;
