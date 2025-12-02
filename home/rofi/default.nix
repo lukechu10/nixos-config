@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    rofi-wayland
+    rofi
   ];
 
   # Symlink the Rofi configuration files.

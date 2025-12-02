@@ -42,7 +42,7 @@
     devenv
     direnv
 
-    config.boot.kernelPackages.perf
+    perf
 
     # USB automounting (see https://wiki.hypr.land/Useful-Utilities/Other/#automatically-mounting-using-udiskie)
     udiskie

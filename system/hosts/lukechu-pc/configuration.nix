@@ -108,17 +108,18 @@
   };
 
   # Configure power button
-  services.logind.powerKey = "suspend";
+  services.logind.settings.Login.HandlePowerKey = "suspend";
 
   # Configure login manager
-  environment.systemPackages = with pkgs; [ greetd.tuigreet ];
+  environment.systemPackages = with pkgs; [ tuigreet ];
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "tuigreet --cmd hyprland";
+        command = "${pkgs.tuigreet} --time --cmd hyprland";
       };
     };
+    useTextGreeter = true;
   };
 
   # Allow unfree packages

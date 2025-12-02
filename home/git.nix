@@ -4,9 +4,11 @@
   # Configure Git
   programs.git = {
     enable = true;
-    userName = "Luke Chu";
-    userEmail = "37006668+lukechu10@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Luke Chu";
+        email = "37006668+lukechu10@users.noreply.github.com";
+      };
       commit.gpgSign = true;
       init = {
         defaultBranch = "main";
