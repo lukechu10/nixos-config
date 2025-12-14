@@ -72,6 +72,12 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable USB storage and SD card modules in initrd
+  boot.initrd.availableKernelModules = [
+    "usb_storage"
+    "sd_mod"
+  ];
+
   networking.hostName = "lukechu-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
