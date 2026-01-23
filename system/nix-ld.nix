@@ -11,11 +11,14 @@
       pkgs.SDL2_ttf
       pkgs.SDL2_gfx
 
+      pkgs.stdenv.cc.cc.lib
+
       pkgs.xorg.libXinerama
       pkgs.libpng
       pkgs.freetype
 
       pkgs.icu
-    ] ++ pkgs.steam-run.args.multiPkgs pkgs;
+    ]
+    ++ pkgs.steam-run.args.multiPkgs pkgs;
   };
 }
