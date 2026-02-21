@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   # Configure Neovim
@@ -17,7 +22,7 @@
       basedpyright
       clang-tools
       fsautocomplete
-      harper
+      pkgs-unstable.harper
       lua-language-server
       nil
       roslyn-ls
