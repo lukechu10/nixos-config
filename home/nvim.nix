@@ -35,8 +35,9 @@
       vscode-extensions.vadimcn.vscode-lldb
     ];
   };
-  home.file.".config/nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nvim";
+  # Symlink the Neovim configuration files.
+  # Note that we do not put the nvim.nix file itself in the nvim configuration directory, since it is a git submodule.
+  home.file.".config/nvim".source = config.lib.meta.mkMutableSymlink ./nvim;
 
   # Neovide
   programs.neovide.enable = true;
