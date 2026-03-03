@@ -5,7 +5,7 @@
     neofetch
     lazygit
 
-    nixfmt-rfc-style
+    nixfmt
 
     # Archives
     zip
