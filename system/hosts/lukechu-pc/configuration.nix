@@ -143,11 +143,11 @@
 
   # Printing support
   services.printing.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
+  # services.avahi = {
+  #   enable = true;
+  #   nssmdns4 = true;
+  #   openFirewall = true;
+  # };
 
   # Scanning support
   hardware.sane.enable = true;
