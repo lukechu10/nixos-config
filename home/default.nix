@@ -1,7 +1,9 @@
-{ config, ... }:
+{ config, attrs, ... }:
 
 {
   imports = [
+    attrs.noctalia.homeModules.default
+
     ./hypr
     ./rofi
     ./waybar
@@ -14,6 +16,7 @@
     ./git.nix
     ./kitty.nix
     ./nixpkgs.nix
+    ./noctalia.nix
     ./nvim.nix
     ./starship.nix
     ./ui.nix
