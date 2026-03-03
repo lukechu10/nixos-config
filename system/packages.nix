@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -21,11 +20,11 @@
 
     # Hyprland
     # Note that Hyprland itself is configured in programs.nix
-    pkgs-unstable.hyprpaper
-    pkgs-unstable.hyprcursor
-    pkgs-unstable.hypridle
-    pkgs-unstable.hyprsunset
-    pkgs-unstable.hyprlock
+    hyprpaper
+    hyprcursor
+    hypridle
+    hyprsunset
+    hyprlock
 
     # Build tools
     gcc

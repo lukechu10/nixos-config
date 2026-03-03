@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
@@ -22,7 +21,7 @@
       basedpyright
       clang-tools
       fsautocomplete
-      pkgs-unstable.harper
+      harper
       lua-language-server
       nil
       roslyn-ls

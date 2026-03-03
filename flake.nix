@@ -2,8 +2,7 @@
   description = "My NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,20 +17,17 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       ...
     }@attrs:
     let
       system = "x86_64-linux";
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       nixosConfigurations.lukechu-pc = nixpkgs.lib.nixosSystem rec {
         inherit system;
         specialArgs = {
           inherit attrs;
-          inherit pkgs-unstable;
         };
         modules = [
           ./system/hosts/lukechu-pc/configuration.nix
