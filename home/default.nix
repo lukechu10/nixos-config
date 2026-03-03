@@ -5,8 +5,6 @@
     attrs.noctalia.homeModules.default
 
     ./hypr
-    ./rofi
-    ./waybar
     ./yazi
 
     ./firefox.nix
