@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -10,5 +10,12 @@
     ./users.nix
   ];
 
-  nixpkgs.overlays = [ (import ./overlays.nix) ];
+  nixpkgs.overlays = [ ];
+
+  # Disable man cache. This dramatically speeds up NixOS rebuilds.
+  documentation.man.generateCaches = false;
+
+  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+  networking.nftables.enable = true;
 }

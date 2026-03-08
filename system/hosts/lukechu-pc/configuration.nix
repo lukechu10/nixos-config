@@ -16,9 +16,6 @@
     "flakes"
   ];
 
-  # Disable man cache
-  documentation.man.generateCaches = false;
-
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
