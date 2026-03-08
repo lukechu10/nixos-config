@@ -13,7 +13,7 @@
   nixpkgs.overlays = [ ];
 
   # Disable man cache. This dramatically speeds up NixOS rebuilds.
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
 
   virtualisation.waydroid.enable = true;
   virtualisation.waydroid.package = pkgs.waydroid-nftables;

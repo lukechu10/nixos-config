@@ -13,7 +13,7 @@
 
       pkgs.stdenv.cc.cc.lib
 
-      pkgs.xorg.libXinerama
+      pkgs.libxinerama
       pkgs.libpng
       pkgs.freetype
 
