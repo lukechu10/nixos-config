@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  attrs,
   ...
 }:
 
@@ -8,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
+    ./alienfx.nix
     ../..
   ];
 

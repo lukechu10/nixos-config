@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "alienfx": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773783557,
+        "narHash": "sha256-RXhJaDmr71snFrXRuEnlxLBJhtDTwG0cqs9SK7XzWrM=",
+        "owner": "lukechu10",
+        "repo": "alienfx",
+        "rev": "e1b7a9eda09b518fb8b584eae666e37833f9fcf0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lukechu10",
+        "repo": "alienfx",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -53,6 +73,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1770107345,
+        "narHash": "sha256-tbS0Ebx2PiA1FRW8mt8oejR0qMXmziJmPaU1d4kYY9g=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4533d9293756b63904b7238acb84ac8fe4c8c2c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -63,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773080291,
-        "narHash": "sha256-3rJzXUYZOvAP7HvO9Atqm4/vyj96uus7iXNOk1yuvjI=",
+        "lastModified": 1773777742,
+        "narHash": "sha256-3lluT9/nXWmv3yV3orSuMMgmj25wbOxy76mJzvqN/w0=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "8be7a34b46d0cd9c615ac39db4efcc4529c67802",
+        "rev": "d9ae5e617f7f512ac7732c5cfb2538d1ae2fa594",
         "type": "github"
       },
       "original": {
@@ -80,14 +116,16 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "systems": "systems",
+        "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1773088462,
-        "narHash": "sha256-Yk1CCFYXZ+CfPAXAPJXCKXy2GkyTyUKjkh2rMj3bnxk=",
+        "lastModified": 1773629133,
+        "narHash": "sha256-9/GtCljeEYQAQlU4LB/o8cTJ8TzYvNCzf4ILnW5Rs3g=",
         "owner": "noctalia-dev",
         "repo": "noctalia-qs",
-        "rev": "6e445b998bc5d9d6fa69b322f866df07ddcf5565",
+        "rev": "5794d3a88fced826e1903164d77a7b07bdb93ff6",
         "type": "github"
       },
       "original": {
@@ -98,11 +136,45 @@
     },
     "root": {
       "inputs": {
+        "alienfx": "alienfx",
         "firefox-gnome-theme": "firefox-gnome-theme",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "noctalia-qs": "noctalia-qs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1772660329,
+        "narHash": "sha256-IjU1FxYqm+VDe5qIOxoW+pISBlGvVApRjiw/Y/ttJzY=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "3710e0e1218041bbad640352a0440114b1e10428",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
       }
     }
   },

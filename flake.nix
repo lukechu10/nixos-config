@@ -20,6 +20,10 @@
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alienfx = {
+      url = "github:lukechu10/alienfx";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
