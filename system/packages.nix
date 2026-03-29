@@ -20,11 +20,9 @@
 
     # Hyprland
     # Note that Hyprland itself is configured in programs.nix
-    hyprpaper
     hyprcursor
     hypridle
     hyprsunset
-    hyprlock
 
     # Build tools
     gcc
