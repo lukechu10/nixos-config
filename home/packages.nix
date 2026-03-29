@@ -16,6 +16,7 @@
     # Utils
     ripgrep
     fd
+    jq
 
     # Misc
     cowsay
@@ -31,7 +32,6 @@
     lsof # list open files
 
     # Notifications
-    swaynotificationcenter # (Auto start by Hyprland)
     libnotify
 
     # Funsies

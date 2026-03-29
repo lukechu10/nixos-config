@@ -5,6 +5,7 @@
     attrs.noctalia.homeModules.default
 
     ./hypr
+    ./noctalia
     ./yazi
 
     ./firefox.nix
@@ -14,7 +15,6 @@
     ./git.nix
     ./kitty.nix
     ./nixpkgs.nix
-    ./noctalia.nix
     ./nvim.nix
     ./starship.nix
     ./ui.nix
