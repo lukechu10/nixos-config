@@ -1,5 +1,5 @@
 {
-  "settingsVersion": 57,
+  "settingsVersion": 59,
   "bar": {
     "barType": "floating",
     "position": "left",
@@ -15,7 +15,6 @@
     "enableExclusionZoneInset": true,
     "backgroundOpacity": 0.3,
     "useSeparateOpacity": true,
-    "floating": true,
     "marginVertical": 7,
     "marginHorizontal": 5,
     "frameThickness": 8,
@@ -75,6 +74,7 @@
           "maxWidth": 145,
           "scrollingMode": "hover",
           "showIcon": true,
+          "showText": true,
           "textColor": "none",
           "useFixedWidth": false
         },
@@ -249,7 +249,8 @@
         "Del"
       ]
     },
-    "reverseScroll": false
+    "reverseScroll": false,
+    "smoothScrollEnabled": true
   },
   "ui": {
     "fontDefault": "Noto Sans",
@@ -269,6 +270,7 @@
     "name": "Oxford, England",
     "weatherEnabled": false,
     "weatherShowEffects": true,
+    "weatherTaliaMascotAlways": false,
     "useFahrenheit": false,
     "use12hourFormat": false,
     "showWeekNumberInCalendar": false,
@@ -277,7 +279,8 @@
     "analogClockInCalendar": false,
     "firstDayOfWeek": -1,
     "hideWeatherTimezone": false,
-    "hideWeatherCityName": false
+    "hideWeatherCityName": false,
+    "autoLocate": false
   },
   "calendar": {
     "cards": [
@@ -304,6 +307,7 @@
     "showHiddenFiles": false,
     "viewMode": "browse",
     "setWallpaperOnAllMonitors": true,
+    "linkLightAndDarkWallpapers": true,
     "fillMode": "crop",
     "fillColor": "#000000",
     "useSolidColor": false,
@@ -312,11 +316,14 @@
     "wallpaperChangeMode": "random",
     "randomIntervalSec": 86400,
     "transitionDuration": 1500,
-    "transitionType": "disc",
+    "transitionType": [
+      "disc"
+    ],
     "skipStartupTransition": false,
     "transitionEdgeSmoothness": 0.05,
     "panelPosition": "follow_bar",
     "hideWallpaperFilenames": false,
+    "useOriginalImages": false,
     "overviewBlur": 0.4,
     "overviewTint": 0.6,
     "useWallhaven": false,
@@ -365,11 +372,12 @@
     "autoPasteClipboard": false,
     "enableClipPreview": true,
     "clipboardWrapText": true,
+    "enableClipboardSmartIcons": true,
+    "enableClipboardChips": true,
     "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
     "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
     "position": "top_center",
     "pinnedApps": [],
-    "useApp2Unit": false,
     "sortByMostUsed": true,
     "terminalCommand": "kitty -e",
     "customLaunchPrefixEnabled": false,
@@ -487,6 +495,8 @@
     "colorizeIcons": false,
     "showLauncherIcon": false,
     "launcherPosition": "end",
+    "launcherUseDistroLogo": false,
+    "launcherIcon": "",
     "launcherIconColor": "none",
     "pinnedStatic": false,
     "inactiveIndicators": false,
@@ -503,8 +513,6 @@
     "indicatorOpacity": 0.6
   },
   "network": {
-    "wifiEnabled": true,
-    "airplaneModeEnabled": false,
     "bluetoothRssiPollingEnabled": false,
     "bluetoothRssiPollIntervalMs": 60000,
     "networkPanelView": "wifi",
@@ -630,6 +638,7 @@
     "volumeOverdrive": false,
     "spectrumFrameRate": 30,
     "visualizerType": "linear",
+    "spectrumMirrored": true,
     "mprisBlacklist": [],
     "preferredPlayer": "",
     "volumeFeedback": false,
@@ -649,7 +658,8 @@
     "manualSunrise": "06:30",
     "manualSunset": "18:30",
     "generationMethod": "rainbow",
-    "monitorForColors": ""
+    "monitorForColors": "",
+    "syncGsettings": true
   },
   "templates": {
     "activeTemplates": [
@@ -660,10 +670,6 @@
       {
         "enabled": true,
         "id": "kitty"
-      },
-      {
-        "enabled": true,
-        "id": "gtk"
       }
     ],
     "enableUserTheming": false
@@ -686,10 +692,12 @@
     "performanceModeEnabled": "",
     "performanceModeDisabled": "",
     "startup": "",
-    "session": ""
+    "session": "",
+    "colorGeneration": ""
   },
   "plugins": {
-    "autoUpdate": false
+    "autoUpdate": false,
+    "notifyUpdates": true
   },
   "idle": {
     "enabled": false,
