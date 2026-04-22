@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   hardware.graphics = {
@@ -11,7 +11,10 @@
   ];
 
   # GTX 1060 is not supported by the new open source NVIDIA kernel driver.
+  # Only supported by the legacy 580 series driver.
   hardware.nvidia.open = false;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.powerManagement.enable = true;
   hardware.nvidia.prime = {
