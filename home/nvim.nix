@@ -9,6 +9,10 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    withNodeJs = false;
+    withPython3 = false;
+    withRuby = false;
+    sideloadInitLua = true;
     extraPackages = with pkgs; [
       tree-sitter
       wl-clipboard
