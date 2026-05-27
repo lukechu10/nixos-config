@@ -24,6 +24,7 @@
     tree
     gnupg
     zathura
+    zotero
     inotify-tools # file system event monitoring
 
     # Syscall monitoring
