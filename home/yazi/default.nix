@@ -32,7 +32,11 @@
   home.file.".config/yazi/keymap.toml".text = ''
     [mgr]
     prepend_keymap = [
-      { on = "t", run = "shell --orphan --confirm kitty", desc = "Open terminal at current dir" },
+      {
+        on = "t",
+        run = "shell --orphan --confirm kitty",
+        desc = "Open terminal at current dir"
+      }
     ]
   '';
 }
