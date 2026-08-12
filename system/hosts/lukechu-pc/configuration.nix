@@ -126,14 +126,4 @@
   services.udisks2.enable = true;
 
   system.stateVersion = "25.05";
-
-  # Swap file
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 34 * 1024; # 34 GiB
-    }
-  ];
-  boot.resumeDevice = "/dev/disk/by-uuid/da12ce3b-59de-478c-9772-fe24e1f2bd31";
-  boot.kernelParams = [ "resume_offset=11190272" ];
 }
