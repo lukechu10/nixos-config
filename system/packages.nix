@@ -43,5 +43,10 @@
 
     # USB automounting (see https://wiki.hypr.land/Useful-Utilities/Other/#automatically-mounting-using-udiskie)
     udiskie
+
+    # AI Agent tools
+    pi-coding-agent
+    bubblewrap
+    socat
   ];
 }
