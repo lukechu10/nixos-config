@@ -133,6 +133,8 @@ local ipc = "noctalia-shell ipc call "
 hl.bind("SUPER + Space", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
 hl.bind("SUPER + m", hl.dsp.exec_cmd(ipc .. "lockScreen lock"))
 hl.bind("SUPER + Comma", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
+hl.bind("SUPER + c", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
+hl.bind("SUPER + Period", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
 
 hl.bind("SUPER + q", hl.dsp.window.close())
 
