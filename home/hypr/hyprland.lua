@@ -235,7 +235,6 @@ hl.on("window.open", function(w)
 
 	local sub
 	sub = hl.on("window.title", function(tw)
-		hl.notification.create({ text = "on title" .. tw.title, timeout = 15000 })
 		if tw.address ~= w.address then return end
 		if tw.title == ""
 			or tw.title == "Mozilla Firefox"
@@ -250,8 +249,6 @@ hl.on("window.open", function(w)
 			hl.dispatch(hl.dsp.window.center({ window = tw }))
 			hl.dispatch(hl.dsp.focus({ window = tw }))
 			sub:remove()
-		else
-			hl.dispatch(hl.dsp.window.float({ action = "unset", window = tw }))
 		end
 	end)
 end)
