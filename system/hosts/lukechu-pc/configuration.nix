@@ -125,5 +125,8 @@
   # USB Automounting
   services.udisks2.enable = true;
 
+  # Mount /tmp to tmpfs
+  boot.tmp.useTmpfs = true;
+
   system.stateVersion = "25.05";
 }
