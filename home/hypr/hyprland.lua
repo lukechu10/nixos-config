@@ -42,6 +42,88 @@ hl.monitor({
 	position = "0x0",
 })
 
+hl.config({
+	xwayland = {
+		force_zero_scaling = true,
+	},
+	debug = {
+		full_cm_proto = true,
+	},
+	ecosystem = {
+		no_update_news = true,
+		no_donation_nag = true,
+	},
+	cursor = {
+		no_hardware_cursors = true,
+	},
+	general = {
+		gaps_in = 4,
+		gaps_out = 6,
+		border_size = 2,
+
+		col = {
+			active_border = "rgba(ffffffaa)",
+			inactive_border = "rgba(ffffff55)",
+		},
+
+		layout = "dwindle",
+	},
+	decoration = {
+		rounding = 8,
+		rounding_power = 2,
+
+		active_opacity = 0.75,
+		inactive_opacity = 0.85,
+
+		shadow = {
+			enabled = true,
+			range = 4,
+			render_power = 3,
+			color = "rgba(1a1a1aee)",
+		},
+		blur = {
+			enabled = true,
+			size = 8,
+			passes = 2,
+			vibrancy = 0.1696,
+		},
+	},
+	animations = {
+		enabled = true,
+	},
+	misc = {
+		force_default_wallpaper = -1,
+		disable_hyprland_logo = true,
+		disable_splash_rendering = true,
+
+		enable_swallow = true,
+		swallow_regex = "^(" .. terminal .. ")$",
+		swallow_exception_regex = "^(nvim.*)$",
+	},
+	dwindle = {
+		preserve_split = true,
+	},
+	input = {
+		kb_layout = "us",
+		follow_mouse = 1,
+		sensitivity = 0, -- -1.0 to 1.0, 0 means no modification
+
+		touchpad = {
+			natural_scroll = true,
+			disable_while_typing = true,
+		},
+	},
+	binds = {
+		hide_special_on_workspace_change = true,
+	},
+})
+
+hl.gesture({
+	fingers = 3,
+	direction = "horizontal",
+	action = "workspace"
+})
+
 -- Keybindings
 hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + b", hl.dsp.exec_cmd(browser))
@@ -75,6 +157,18 @@ end
 hl.bind("SUPER + s", hl.dsp.workspace.toggle_special("scratch"))
 hl.bind("SUPER + SHIFT + s", hl.dsp.window.move({ workspace = "special:scratch" }))
 
+-- Toggle workspace between dwindle and scrolling
+hl.bind("SUPER + Tab", function()
+	local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+	if not workspace then
+		return
+	end
+	local next_layout = workspace.tiled_layout == "dwindle" and "scrolling" or "dwindle"
+	local selector = workspace.special and tostring(workspace.name) or tostring(workspace.id)
+
+	hl.workspace_rule({ workspace = selector, layout = next_layout })
+end)
+
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
 	{ locked = true, repeating = true })
@@ -93,4 +187,39 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
-hl.bind("SUPER + r", hl.dsp.exec_cmd("hyprctl reload"))
+hl.bind("SUPER + r", hl.dsp.force_renderer_reload())
+
+hl.window_rule({
+	name = "ignore-maximize-requests",
+	match = {
+		class = ".*",
+	},
+	suppress_event = "maximize"
+})
+hl.window_rule({
+	name = "fix-xwayland-dragging",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = 1,
+		float = 1,
+		fullscreen = 0,
+		pin = 0,
+	},
+	no_focus = true,
+})
+hl.window_rule({
+	name = "only-blur-kitty",
+	match = {
+		class = "negative:^(kitty)"
+	},
+	opacity = "1.0 override"
+})
+hl.window_rule({
+	name = "do-not-blur-neovim",
+	match = {
+		title = "^(nvim.*)$",
+		class = "kitty",
+	},
+	opacity = "1.0 override"
+})
