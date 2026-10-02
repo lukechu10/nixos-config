@@ -17,7 +17,6 @@
     ripgrep
     fd
     jq
-    wl-clipboard
 
     # Misc
     cowsay
@@ -36,10 +35,12 @@
     # Notifications
     libnotify
 
-    # Screenshot tools
+    # Screenshot + Clipboard
     grim
     slurp
     satty
+    wl-clipboard
+    cliphist
 
     # Funsies
     cmatrix
