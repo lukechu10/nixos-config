@@ -188,6 +188,14 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
+-- Screenshotting
+hl.bind("SUPER + P",
+	hl.dsp.exec_cmd(
+		'grim -g "$(slurp)" - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
+hl.bind("SUPER + SHIFT + P",
+	hl.dsp.exec_cmd(
+		'grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
+
 hl.bind("SUPER + r", hl.dsp.force_renderer_reload())
 
 hl.window_rule({
@@ -223,6 +231,15 @@ hl.window_rule({
 		class = "kitty",
 	},
 	opacity = "1.0 override"
+})
+hl.window_rule({
+	name = "always-float-satty",
+	match = {
+		class = "^(com.gabm.satty)$",
+	},
+	float = 1,
+	center = true,
+	size = "800 600",
 })
 
 -- Float all firefox windows except the first one, and float extension windows.
