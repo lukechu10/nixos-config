@@ -149,9 +149,10 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Workspace navigation
-for i = 1, 9 do
-	hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }))
-	hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+for i = 1, 10 do
+	local key = i % 10
+	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 -- Scratchpad
 hl.bind("SUPER + s", hl.dsp.workspace.toggle_special("scratch"))
@@ -223,3 +224,34 @@ hl.window_rule({
 	},
 	opacity = "1.0 override"
 })
+
+-- Float all firefox windows except the first one, and float extension windows.
+hl.on("window.open", function(w)
+	if w.class ~= "firefox" then return end
+	if w.initial_title ~= "Mozilla Firefox" then return end
+
+	local ff_windows = hl.get_windows({ class = "firefox" })
+	if #ff_windows <= 1 then return end
+
+	local sub
+	sub = hl.on("window.title", function(tw)
+		hl.notification.create({ text = "on title" .. tw.title, timeout = 15000 })
+		if tw.address ~= w.address then return end
+		if tw.title == ""
+			or tw.title == "Mozilla Firefox"
+			or tw.title == "about:blank"
+			or tw.title:match("^about:.*Mozilla Firefox$") then
+			return
+		end
+
+		if tw.title:match("^Extension:") then
+			hl.dispatch(hl.dsp.window.float({ action = "set", window = w }))
+			hl.dispatch(hl.dsp.window.resize({ x = 800, y = 600, window = tw }))
+			hl.dispatch(hl.dsp.window.center({ window = tw }))
+			hl.dispatch(hl.dsp.focus({ window = tw }))
+			sub:remove()
+		else
+			hl.dispatch(hl.dsp.window.float({ action = "unset", window = tw }))
+		end
+	end)
+end)
