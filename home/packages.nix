@@ -42,6 +42,9 @@
     wl-clipboard
     cliphist
 
+    # Local LLM
+    ollama-vulkan
+
     # Funsies
     cmatrix
     asciiquarium
