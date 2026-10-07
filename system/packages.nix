@@ -1,4 +1,5 @@
 {
+  attrs,
   config,
   pkgs,
   ...
@@ -45,7 +46,7 @@
     udiskie
 
     # AI Agent tools
-    pi-coding-agent
+    (attrs.nixpkgs-pi.legacyPackages.${pkgs.stdenv.hostPlatform.system}.pi-coding-agent)
     bubblewrap
     socat
   ];
