@@ -18,7 +18,7 @@ hl.env("XCURSOR_SIZE", 24)
 
 local terminal = "kitty"
 local file_manager = "kitty fish -c 'yazi'"
-local browser = "firefox"
+local browser = "chromium"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("noctalia-shell")

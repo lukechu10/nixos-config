@@ -20,22 +20,6 @@
         "type": "github"
       }
     },
-    "firefox-gnome-theme": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1792334007,
-        "narHash": "sha256-RWw0Xdt8yihQg7NgJi1moKMT2Kp0EIc9mFT4GYNZwZM=",
-        "owner": "rafaelmardojai",
-        "repo": "firefox-gnome-theme",
-        "rev": "2164029bbf693ae6013d6953d54d46b9b6a724a2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rafaelmardojai",
-        "repo": "firefox-gnome-theme",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -121,7 +105,6 @@
     "root": {
       "inputs": {
         "alienfx": "alienfx",
-        "firefox-gnome-theme": "firefox-gnome-theme",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia"

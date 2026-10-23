@@ -8,7 +8,7 @@
     ./noctalia
     ./yazi
 
-    ./firefox.nix
+    ./browser.nix
     ./fish.nix
     ./fonts.nix
     ./gaming.nix
