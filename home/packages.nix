@@ -31,6 +31,7 @@
     zathura
     zotero
     inotify-tools # file system event monitoring
+    bitwarden-desktop
 
     # Syscall monitoring
     strace # system call tracing
