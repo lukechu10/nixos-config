@@ -1,6 +1,4 @@
 {
-  attrs,
-  config,
   pkgs,
   ...
 }:
@@ -46,8 +44,11 @@
     udiskie
 
     # AI Agent tools
-    (attrs.nixpkgs-pi.legacyPackages.${pkgs.stdenv.hostPlatform.system}.pi-coding-agent)
+    pi-coding-agent
     bubblewrap
     socat
+
+    # GNOME Keyring management
+    seahorse
   ];
 }

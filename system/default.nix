@@ -12,6 +12,12 @@
 
   nixpkgs.overlays = [ ];
 
+  # Allow outdated Firefox ESR package for zotero.
+  # Remove once zotero 11 is released and packaged.
+  nixpkgs.config.permittedInsecurePackages = [
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
+  ];
+
   # Add additional binary caches to prevent rebuilds from source.
   nix.settings = {
     substituters = [
@@ -51,4 +57,6 @@
     variant = "";
   };
 
+  # Enable GNOME keyring
+  services.gnome.gnome-keyring.enable = true;
 }
