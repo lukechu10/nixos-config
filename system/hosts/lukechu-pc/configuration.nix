@@ -43,6 +43,12 @@
 
   networking.hostName = "lukechu-pc"; # Define your hostname.
 
+  environment.systemPackages = with pkgs; [
+    tuigreet
+    libimobiledevice
+    ifuse
+  ];
+
   # Set your time zone.
   time.timeZone = lib.mkForce null;
   services.automatic-timezoned.enable = true;
@@ -51,7 +57,6 @@
   services.logind.settings.Login.HandlePowerKey = "suspend";
 
   # Configure login manager
-  environment.systemPackages = with pkgs; [ tuigreet ];
   services.greetd = {
     enable = true;
     settings = {
@@ -88,6 +93,9 @@
 
   # USB Automounting
   services.udisks2.enable = true;
+
+  # Enable mounting iOS devices
+  services.usbmuxd.enable = true;
 
   # Mount /tmp to tmpfs
   boot.tmp.useTmpfs = true;

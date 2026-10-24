@@ -14,6 +14,7 @@
     ./gaming.nix
     ./git.nix
     ./kitty.nix
+    ./music.nix
     ./nixpkgs.nix
     ./nvim.nix
     ./starship.nix
