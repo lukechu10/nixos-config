@@ -16,4 +16,11 @@
   programs.rmpc = {
     enable = true;
   };
+  # Regenerate defaults with `rmpc config > rmpc.ron`.
+  home.file.".config/rmpc/config.ron".source = config.lib.meta.mkMutableSymlink ./rmpc.ron;
+
+  home.packages = with pkgs; [
+    yt-dlp
+    spotdl
+  ];
 }
