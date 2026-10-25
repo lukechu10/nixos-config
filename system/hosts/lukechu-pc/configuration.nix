@@ -6,9 +6,9 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ./nvidia.nix
     ./alienfx.nix
+    ./graphics.nix
+    ./hardware-configuration.nix
     ../..
   ];
 

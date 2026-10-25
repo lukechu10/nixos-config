@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  # Hardware Video Acceleration using VA-API.
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+    extraPackages = with pkgs; [ intel-media-driver ];
   };
+  environment.variables.LIBVA_DRIVER_NAME = "iHD";
+
   services.xserver.videoDrivers = [
     "modesetting"
     "nvidia"

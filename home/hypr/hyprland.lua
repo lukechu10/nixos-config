@@ -1,7 +1,6 @@
 -- Use iGPU for laptop screen and dGPU for external monitors.
 -- Alienware 13 R3 has HDMI and DP ports connected to dGPU so it's impossible to use iGPU for external monitors.
 hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("NVD_BACKEND", "direct")
 
