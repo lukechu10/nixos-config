@@ -136,10 +136,9 @@ hl.bind("SUPER + e", hl.dsp.exec_cmd(file_manager))
 
 local ipc = "noctalia msg "
 hl.bind("SUPER + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
-hl.bind("SUPER + m", hl.dsp.exec_cmd(ipc .. "lockScreen lock"))
+hl.bind("SUPER + m", hl.dsp.exec_cmd(ipc .. "session lock"))
 hl.bind("SUPER + Comma", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
-hl.bind("SUPER + c", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
-hl.bind("SUPER + Period", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
+hl.bind("SUPER + c", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 
 hl.bind("SUPER + q", hl.dsp.window.close())
 
