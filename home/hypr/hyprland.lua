@@ -1,3 +1,6 @@
+package.path = package.path .. ";/?.lua;./?/init.lua"
+local smw = require("plugins.split-monitor-workspaces")
+
 -- Use iGPU for laptop screen and dGPU for external monitors.
 -- Alienware 13 R3 has HDMI and DP ports connected to dGPU so it's impossible to use iGPU for external monitors.
 hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
@@ -160,10 +163,14 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Workspace navigation
+smw.setup({
+	workspace_count = 10,
+	enable_notifications = true,
+})
 for i = 1, 10 do
-	local key = i % 10
-	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	local key = tostring(i % 10) -- Map workspace 10 to key 0
+	hl.bind("SUPER + " .. key, smw.workspace(key))
+	hl.bind("SUPER + SHIFT + " .. key, smw.move_to_workspace_silent(key))
 end
 -- Scratchpad
 hl.bind("SUPER + s", hl.dsp.workspace.toggle_special("scratch"))
