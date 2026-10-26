@@ -4,7 +4,7 @@
 (
     address: "127.0.0.1:6600",
     password: None,
-    theme: None,
+    theme: Some("gruvbox"),
     cache_dir: None,
 	lyrics_dir: "/home/luke/Music/",
     on_song_change: None,
