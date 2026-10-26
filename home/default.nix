@@ -1,9 +1,7 @@
-{ config, attrs, ... }:
+{ config, ... }:
 
 {
   imports = [
-    attrs.noctalia.homeModules.default
-
     ./hypr
     ./noctalia
     ./yazi

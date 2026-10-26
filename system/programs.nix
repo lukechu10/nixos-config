@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }:
@@ -7,7 +6,6 @@
 {
   programs.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
   };
   programs.fish.enable = true;
 
