@@ -6,6 +6,8 @@
 {
   programs.hyprland = {
     enable = true;
+    # TODO: We are not actually using UWSM yet but we enable it to prevent a cache miss with Hydra. See https://github.com/NixOS/nixpkgs/issues/496640 for more details.
+    withUWSM = true;
   };
   programs.fish.enable = true;
 

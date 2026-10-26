@@ -20,7 +20,7 @@ local file_manager = "kitty fish -c 'yazi'"
 local browser = "chromium"
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("noctalia-shell")
+	hl.exec_cmd("noctalia")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("hyprsunset")
 	hl.exec_cmd("udiskie")
@@ -61,7 +61,12 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = "rgba(ffffffaa)",
+			active_border = {
+				colors = {
+					"rgba(b16286aa)", "rgba(b16286dd)",
+				},
+				angle = 60
+			},
 			inactive_border = "rgba(ffffff55)",
 		},
 
