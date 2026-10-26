@@ -31,7 +31,7 @@ local primary_monitor = "eDP-1"
 hl.monitor({
 	output = "",
 	mode = "preferred",
-	position = "auto",
+	position = "auto-center-up",
 	scale = "auto",
 })
 hl.monitor({
@@ -110,6 +110,7 @@ hl.config({
 	},
 	input = {
 		kb_layout = "us",
+		kb_options = "caps:escape",
 		follow_mouse = 1,
 		sensitivity = 0, -- -1.0 to 1.0, 0 means no modification
 
