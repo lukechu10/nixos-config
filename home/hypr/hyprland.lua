@@ -147,6 +147,10 @@ hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }))
+hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
+hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
+hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
+hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
 
 -- Window resizing
 hl.bind("SUPER + f", hl.dsp.window.fullscreen({ action = "toggle" }))
