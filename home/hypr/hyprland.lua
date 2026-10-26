@@ -76,8 +76,9 @@ hl.config({
 		rounding = 8,
 		rounding_power = 2,
 
-		active_opacity = 0.75,
+		active_opacity = 1.0,
 		inactive_opacity = 0.85,
+		fullscreen_opacity = 1.0,
 
 		shadow = {
 			enabled = true,
@@ -133,10 +134,10 @@ hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + b", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + e", hl.dsp.exec_cmd(file_manager))
 
-local ipc = "noctalia-shell ipc call "
-hl.bind("SUPER + Space", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
+local ipc = "noctalia msg "
+hl.bind("SUPER + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind("SUPER + m", hl.dsp.exec_cmd(ipc .. "lockScreen lock"))
-hl.bind("SUPER + Comma", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
+hl.bind("SUPER + Comma", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 hl.bind("SUPER + c", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
 hl.bind("SUPER + Period", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
 
@@ -223,29 +224,45 @@ hl.window_rule({
 	},
 	no_focus = true,
 })
-hl.window_rule({
-	name = "only-blur-kitty",
-	match = {
-		class = "negative:^(kitty)"
-	},
-	opacity = "1.0 override"
-})
-hl.window_rule({
-	name = "do-not-blur-neovim",
-	match = {
-		title = "^(nvim.*)$",
-		class = "kitty",
-	},
-	opacity = "1.0 override"
-})
+-- hl.window_rule({
+-- 	name = "only-blur-kitty-and-noctalia",
+-- 	match = {
+-- 		class = "negative:^(kitty)"
+-- 	},
+-- 	opacity = "1.0 override"
+-- })
+-- hl.window_rule({
+-- 	name = "do-not-blur-neovim",
+-- 	match = {
+-- 		title = "^(nvim.*)$",
+-- 		class = "kitty",
+-- 	},
+-- 	opacity = "1.0 override"
+-- })
 hl.window_rule({
 	name = "always-float-satty",
-	match = {
-		class = "^(com.gabm.satty)$",
-	},
+	match = { class = "^(com.gabm.satty)$" },
 	float = 1,
 	center = true,
-	size = "800 600",
+	size = { 800, 600 },
+})
+hl.window_rule({
+	name = "noctalia-settings",
+	match = { class = "dev.noctalia.Noctalia" },
+	float = true,
+	size = { 1080, 800 },
+	opacity = "0.8 override"
+})
+
+hl.layer_rule({
+	name = "noctalia",
+	match = {
+		namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+	},
+	no_anim = true,
+	ignore_alpha = 0.5,
+	blur = true,
+	blur_popups = true,
 })
 
 -- Float all firefox windows except the first one, and float extension windows.
