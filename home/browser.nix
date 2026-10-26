@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.firefox = {
@@ -14,5 +14,8 @@
       "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
       "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
     ];
+    package = pkgs.chromium.override {
+      enableWideVine = true;
+    };
   };
 }
