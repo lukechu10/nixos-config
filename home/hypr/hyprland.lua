@@ -77,7 +77,7 @@ hl.config({
 		rounding_power = 2,
 
 		active_opacity = 1.0,
-		inactive_opacity = 0.85,
+		inactive_opacity = 0.9,
 		fullscreen_opacity = 1.0,
 
 		shadow = {
@@ -223,21 +223,6 @@ hl.window_rule({
 	},
 	no_focus = true,
 })
--- hl.window_rule({
--- 	name = "only-blur-kitty-and-noctalia",
--- 	match = {
--- 		class = "negative:^(kitty)"
--- 	},
--- 	opacity = "1.0 override"
--- })
--- hl.window_rule({
--- 	name = "do-not-blur-neovim",
--- 	match = {
--- 		title = "^(nvim.*)$",
--- 		class = "kitty",
--- 	},
--- 	opacity = "1.0 override"
--- })
 hl.window_rule({
 	name = "always-float-satty",
 	match = { class = "^(com.gabm.satty)$" },
@@ -252,6 +237,13 @@ hl.window_rule({
 	size = { 1080, 800 },
 	opacity = "0.8 override"
 })
+hl.window_rule({
+	name = "float-chromium-extension-popups",
+	match = {
+		class = "^(chrome-[a-z]+-.*)$",
+	},
+	float = 1,
+})
 
 hl.layer_rule({
 	name = "noctalia",
@@ -264,7 +256,14 @@ hl.layer_rule({
 	blur_popups = true,
 })
 
--- Float all firefox windows except the first one, and float extension windows.
+hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 0, gaps_in = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, rounding = 0 })
+hl.window_rule({ match = { float = false, workspace = "f[1]s[false]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "f[1]s[false]" }, rounding = 0 })
+
+-- Float all Firefox windows except the first one, and float extension windows.
 hl.on("window.open", function(w)
 	if w.class ~= "firefox" then return end
 	if w.initial_title ~= "Mozilla Firefox" then return end
