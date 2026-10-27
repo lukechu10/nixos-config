@@ -165,7 +165,6 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- Workspace navigation
 smw.setup({
 	workspace_count = 10,
-	enable_notifications = true,
 })
 for i = 1, 10 do
 	local key = tostring(i % 10) -- Map workspace 10 to key 0
