@@ -1,32 +1,15 @@
 package.path = package.path .. ";/?.lua;./?/init.lua"
 local smw = require("plugins.split-monitor-workspaces")
 
--- Use iGPU for laptop screen and dGPU for external monitors.
--- Alienware 13 R3 has HDMI and DP ports connected to dGPU so it's impossible to use iGPU for external monitors.
-hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-hl.env("NVD_BACKEND", "direct")
-
--- Use wayland backend for all applications, fallback to x11 if wayland is not available.
-hl.env("GDK_BACKEND", "wayland,x11,*")
-hl.env("QT_QPA_PLATFORM", "wayland")
-hl.env("SDL_VIDEODRIVER", "wayland")
-hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-
-hl.env("GDK_SCALE", 2)
-hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("HYPRCURSOR_SIZE", 24)
-hl.env("XCURSOR_SIZE", 24)
-
 local terminal = "kitty"
 local file_manager = "kitty fish -c 'yazi'"
 local browser = "chromium"
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("noctalia")
-	hl.exec_cmd("hypridle")
-	hl.exec_cmd("hyprsunset")
-	hl.exec_cmd("udiskie")
+	hl.exec_cmd("uwsm app -- noctalia")
+	hl.exec_cmd("uwsm app -- hypridle")
+	hl.exec_cmd("uwsm app -- hyprsunset")
+	hl.exec_cmd("uwsm app -- udiskie")
 end)
 
 local primary_monitor = "eDP-1"
@@ -134,9 +117,9 @@ hl.gesture({
 })
 
 -- Keybindings
-hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal))
-hl.bind("SUPER + b", hl.dsp.exec_cmd(browser))
-hl.bind("SUPER + e", hl.dsp.exec_cmd(file_manager))
+hl.bind("SUPER + Return", hl.dsp.exec_cmd("uwsm app -- " .. terminal))
+hl.bind("SUPER + b", hl.dsp.exec_cmd("uwsm app -- " .. browser))
+hl.bind("SUPER + e", hl.dsp.exec_cmd("uwsm app -- " .. file_manager))
 
 local ipc = "noctalia msg "
 hl.bind("SUPER + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))

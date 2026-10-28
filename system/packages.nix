@@ -23,6 +23,11 @@
     hypridle
     hyprsunset
 
+    # Screensharing
+    pipewire
+    wireplumber
+    xdg-desktop-portal-hyprland
+
     # Build tools
     gcc
     clang
