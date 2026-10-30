@@ -1,6 +1,4 @@
 {
-  attrs,
-  config,
   pkgs,
   ...
 }:

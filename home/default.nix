@@ -7,6 +7,7 @@
     ./yazi
 
     ./browser.nix
+    ./email.nix
     ./fish.nix
     ./fonts.nix
     ./gaming.nix
