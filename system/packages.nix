@@ -36,6 +36,7 @@
     nodejs
     rustup
     typst
+    python3
 
     dotnet-sdk_9
     fantomas # F# source code formatter
