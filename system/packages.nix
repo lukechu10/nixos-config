@@ -50,6 +50,7 @@
     udiskie
 
     # AI Agent tools
+    codex
     pi-coding-agent
     bubblewrap
     socat
