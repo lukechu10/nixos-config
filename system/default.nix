@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./docker.nix
     ./gaming.nix
     ./networking.nix
     ./nix-ld.nix
