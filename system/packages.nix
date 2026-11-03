@@ -37,6 +37,8 @@
     rustup
     typst
     python3
+    uv
+
     elan
 
     dotnet-sdk_9
